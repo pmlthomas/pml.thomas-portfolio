@@ -1,0 +1,75 @@
+// Tablet
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container .middleHeader {
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 4%;
+        .left {
+            display: flex;
+            justify-content: center;
+            margin-left: 6%;
+            .leftText {
+                font-size: 0.8em;
+            }
+            div {
+                width: 86%;
+                h2 {
+                    font-size: 1.5em;
+                }
+            }
+        }
+        .profile_img {
+            margin-top: 3vh;
+            width: 250px;
+            height: 250px;
+        }
+        .right {
+            display: flex;
+            justify-content: center;
+            margin-right: 0;
+        }
+    }
+}
+
+// Phone
+@media screen and (max-width: 768px) {
+    .container {
+        .topHeader {
+            .nav {
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+                .navLeft {
+                    margin-left: 25px;
+                }
+                .navRight {
+                    margin: 0;
+                    .phoneNav {
+                        margin-right: 25px;
+                        display: block;
+                    }
+                    ul {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .middleHeader {
+            flex-direction: column;
+            justify-content: center;
+            .left {
+                display: flex;
+                justify-content: center;
+                .leftText {
+                    padding: 5vw;
+                    font-size: 0.5em;
+                }
+            }
+            .profile_img {
+                width: 250px;
+                height: 250px;
+                margin-top: 3vh;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@import "./../../variables.scss";
+
+@keyframes textAppear {
+    0% {
+        color: $background;
+    }
+    100% {
+        color: white;
+    }
+}
+
+@keyframes textAppearColored {
+    0% {
+        text-shadow: none;
+        color: $background;
+    }
+    100% {
+        color: $primary;
+        text-shadow: 0 0 2px $primary;
+    }
+}
+
+@keyframes secondaryTextAppear {
+    0% {
+        color: black;
+    }
+    100% {
+        color: white;
+    }
+}
+
+@keyframes imgAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-6%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes leftDot {
+    0% {
+        color: transparent;
+    }
+    90% {
+        color: transparent;
+    }
+    100% {
+        color: white;
+    }
+}

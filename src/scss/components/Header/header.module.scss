@@ -1,0 +1,175 @@
+@import "./../../variables.scss";
+@import "./keyframes.scss";
+
+html {
+    scroll-behavior: smooth;
+    background-color: $background;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    cursor: none;
+    margin: 0;
+    min-height: 100% !important;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.innerCursor {
+    position: fixed;
+    z-index: 10;
+    margin-top: -6px;
+    margin-left: -5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $primary;
+}
+
+.outerCursor {
+    position: fixed;
+    z-index: 10;
+    margin-top: 4px;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 3px solid $primary;
+    transition: all 400ms ease-out;
+}
+
+.container {
+    color: white;
+    letter-spacing: 1px;
+    .topHeader {
+        margin-top: 5px;
+        width: 100vw;
+        .nav {
+            cursor: default;
+            position: fixed;
+            top: -7px;
+            width: 100%;
+            height: 80px;
+            background-color: $background;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 5vw;
+            .navLeft {
+                display: flex;
+                cursor: pointer;
+                color: inherit;
+                text-decoration: none;
+                margin: 0;
+                margin-top: 61px;
+                p {
+                    margin-top: -15px;
+                    font-size: 3em;
+                }
+                .coloredText {
+                    color: $primary;
+                    text-shadow: 0 0 2px $primary;
+                    margin-top: -15px;
+                    font-size: 3em;
+                }
+                .dot {
+                    animation: leftDot 1.31s ease-in forwards;
+                    margin-top: -15px;
+                    font-size: 3em;
+                }
+            }
+            .navRight {
+                margin-right: 10vw;
+                margin-top: 5px;
+                .phoneNav {
+                    display: none;
+                    margin-top: 10px;
+                }
+                ul {
+                    list-style-type: none;
+                    display: flex;
+                    gap: 50px;
+                    li a {
+                        position: relative;
+                        font-size: 1.2em;
+                        color: white;
+                        text-decoration: none;
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            bottom: -4px;
+                            left: 0;
+                            width: 0;
+                            height: 3px;
+                            background: $primary;
+                            transition: 0.2s ease;
+                        }
+                        &:hover:before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .underlined {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1px;
+    }
+    .middleHeader {
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .left {
+            margin-top: -3%;
+            .leftText {
+                @include flexCol();
+                margin-top: -7%;
+                .salutation {
+                    font-size: 1.6em;
+                    margin-top: 30px;
+                    animation: textAppearColored 1.8s forwards;
+                }
+                .mainText {
+                    margin-top: -18px;
+                    margin-bottom: -2px;
+                    font-size: 3.5em;
+                }
+                .secondaryText {
+                    margin-top: 12px;
+                    font-size: 1.8em;
+                    opacity: 1;
+                    max-width: 800px;
+                }
+            }
+        }
+        .profile_img {
+            animation: imgAppear 0.7s ease-in-out forwards;
+            border-radius: 50%;
+            box-shadow: -4px 12px $primary;
+            width: 500px;
+            height: 500px;
+            max-width: 90vw;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .mainText {
+        animation: textAppear 1.8s forwards;
+        color: black;
+        span {
+            animation: textAppearColored 1.8s forwards;
+        }
+    }
+    .subText {
+        animation: secondaryTextAppear 0.5s forwards;
+        color: black;
+    }
+}
+
+@import "./mediaQueries.scss";

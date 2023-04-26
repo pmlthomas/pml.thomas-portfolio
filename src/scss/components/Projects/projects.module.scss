@@ -1,0 +1,73 @@
+@import "./../../variables.scss";
+@import "./keyframes.scss";
+
+.container {
+    height: 90vh;
+    z-index: 7;
+    padding-top: 110px;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        display: flex;
+        justify-content: center;
+        color: white;
+    }
+    .projectsContainer {
+        background-color: transparent;
+    }
+    .projectsContainerActive {
+        height: 100%;
+        .projectsDisplay {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 4%;
+            .projectCard {
+                position: relative;
+                max-width: 420px;
+                max-height: 400px;
+                animation: projectAppear 0.7s ease-in-out forwards;
+                transition: transform 0.6 ease-in-out;
+                &:hover {
+                    transform: translateY(-6px);
+                    .seeMore {
+                        display: block;
+                    }
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 420px;
+                    height: 400px;
+                }
+                &:hover:before {
+                    background: rgb(2, 0, 36);
+                    background: linear-gradient(
+                        180deg,
+                        rgba(2, 0, 36, 0) 0%,
+                        $primary
+                    );
+                }
+                img {
+                    border-radius: 1%;
+                    width: 420px;
+                    height: 400px;
+                    object-fit: cover;
+                }
+                .seeMore {
+                    display: none;
+                    font-size: 1.1em;
+                    color: white;
+                    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
+                        -1px 1px 0 #000, 1px 1px 0 #000;
+                    letter-spacing: 1px;
+                    position: absolute;
+                    bottom: 5px;
+                    left: 160px;
+                }
+            }
+        }
+    }
+}
+
+@import "./mediaQueries.scss";

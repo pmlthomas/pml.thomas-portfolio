@@ -1,0 +1,128 @@
+@import "./../../variables.scss";
+@import "./keyframes.scss";
+
+.container {
+    height: 100vh;
+    z-index: 7;
+    padding-top: 110px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(11, 11, 11);
+    h1 {
+        display: flex;
+        justify-content: center;
+        color: white;
+    }
+    .abilitiesContainer {
+        background-color: transparent;
+    }
+    .abilitiesContainerActive {
+        margin-top: 20px;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: 5;
+            width: fit-content;
+            height: 540px;
+            width: 100%;
+            background-color: rgb(11, 11, 11);
+            animation: abilitiesDisplay 0.8s
+                cubic-bezier(0.2, 0.55, 0.64, -0.03) forwards;
+            animation-delay: 150ms;
+        }
+        .left {
+            position: relative;
+            @include flexCol();
+            width: 700px;
+            max-width: 40vw;
+            max-height: 80vh;
+            height: 520px;
+            margin-left: 5%;
+            background-color: white;
+            border-radius: 5px;
+            border: $primary solid 3px;
+            transition: transform 0.15s ease-in-out;
+            &:hover {
+                transform: translateY(-15px);
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                padding-left: 22px;
+                padding-right: 22px;
+                .langAndPercentage {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: -17px;
+                }
+                .center {
+                    display: flex;
+                    justify-content: center;
+                    .progressBarContainer {
+                        background-color: white;
+                        border: $primary solid 2px;
+                        border-radius: 4px;
+                        width: 100%;
+                        margin-bottom: -5px;
+                        .progressBar {
+                            box-shadow: 0 0 0px 3px white inset;
+                            box-sizing: border-box;
+                            background-color: $primary;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .right {
+            @include flexCol();
+            width: 700px;
+            max-width: 40vw;
+            max-height: 80vh;
+            height: 520px;
+            margin-right: 5%;
+            background-color: white;
+            border-radius: 5px;
+            border: $primary solid 3px;
+            transition: transform 0.1s ease-in-out;
+            &:hover {
+                transform: translateY(-15px);
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                padding-left: 22px;
+                padding-right: 22px;
+                .langAndPercentage {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: -17px;
+                }
+                .center {
+                    display: flex;
+                    justify-content: center;
+                    .progressBarContainer {
+                        background-color: white;
+                        border: $primary solid 2px;
+                        border-radius: 4px;
+                        width: 100%;
+                        margin-bottom: -5px;
+                        .progressBar {
+                            box-shadow: 0 0 0px 3px white inset;
+                            box-sizing: border-box;
+                            background-color: $primary;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@import "./mediaQueries.scss";

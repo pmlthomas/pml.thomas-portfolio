@@ -1,0 +1,7 @@
+$primary: rgb(0, 154, 154); //rgb(0, 119, 255)
+$secondary: rgb(74, 33, 26);
+$background: #000000;
+@mixin flexCol() {
+    display: flex;
+    flex-direction: column;
+}
