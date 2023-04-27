@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./../../scss/components/Projects/projects.module.scss";
-import adonisImg from "./../../images/projet adonis.png";
 
-export default function ProjectCard() {
+export default function ProjectCard({ name, description, img }) {
     return (
-        <div className={styles.projectCard}>
-            <img src={adonisImg} alt="image_de_projet" />
-            <p className={styles.seeMore}>VOIR PLUS</p>
-        </div>
+        <>
+            <img src={img} alt="image_de_projet" />
+            <div className={styles.projectTexts}>
+                <h1 className={styles.projectName}>{name}</h1>
+                <h2 className={styles.projectDescription}>{description}</h2>
+            </div>
+        </>
     );
 }

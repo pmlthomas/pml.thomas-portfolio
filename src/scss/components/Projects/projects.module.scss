@@ -4,7 +4,7 @@
 .container {
     height: 100vh;
     z-index: 7;
-    padding-top: 130px;
+    padding-top: 145px;
     display: flex;
     flex-direction: column;
     scroll-snap-align: start;
@@ -19,19 +19,24 @@
     .projectsContainerActive {
         height: 100%;
         .projectsDisplay {
+            cursor: pointer;
             position: absolute;
             left: 50%;
             transform: translate(-50%);
-            z-index: 8;
-            margin-top: 40px;
+            z-index: 15;
+            margin-top: 35px;
             display: flex;
             justify-content: center;
             gap: 4%;
             width: 100vw;
             .projectCard {
                 position: relative;
-                max-width: 420px;
-                max-height: 400px;
+                width: 300px;
+                height: 290px;
+                padding: 20px;
+                padding-bottom: 100px;
+                background-color: white;
+                border-radius: 2%;
                 clip-path: inset(0 0 100% 0);
                 transition: transform 0.6 ease-in-out;
                 animation: projectsAppear 0.6s ease-in-out forwards;
@@ -43,15 +48,14 @@
                 }
                 &:hover {
                     transform: translateY(-6px);
-                    .seeMore {
-                        display: block;
-                    }
                 }
                 &:before {
                     content: "";
                     position: absolute;
-                    width: 420px;
-                    height: 400px;
+                    left: 0;
+                    top: 0px;
+                    width: 340px;
+                    height: 410px;
                 }
                 &:hover:before {
                     background: rgb(2, 0, 36);
@@ -63,20 +67,27 @@
                 }
                 img {
                     border-radius: 1%;
-                    width: 420px;
-                    height: 400px;
+                    width: 300px;
+                    height: 280px;
                     object-fit: cover;
                 }
-                .seeMore {
-                    display: none;
-                    font-size: 1.1em;
-                    color: white;
-                    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
-                        -1px 1px 0 #000, 1px 1px 0 #000;
-                    letter-spacing: 1px;
-                    position: absolute;
-                    bottom: 5px;
-                    left: 160px;
+                .projectTexts {
+                    margin-top: -7px;
+                    .projectName {
+                        position: relative;
+                        color: black;
+                        font-size: 1.4em;
+                        text-decoration: underline 2px;
+                        text-underline-offset: 4px;
+                    }
+                    .projectDescription {
+                        position: relative;
+                        color: black;
+                        font-size: 0.8em;
+                        margin-left: 12px;
+                        margin-top: -7px;
+                        opacity: 0.7;
+                    }
                 }
             }
         }

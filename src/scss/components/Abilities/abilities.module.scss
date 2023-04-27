@@ -3,7 +3,7 @@
 
 .container {
     height: 100vh;
-    padding-top: 120px;
+    padding-top: 125px;
     display: flex;
     flex-direction: column;
     background-color: rgb(11, 11, 11);
@@ -16,14 +16,14 @@
         background-color: transparent;
     }
     .abilitiesContainerActive {
-        margin-top: 20px;
+        margin-top: 25px;
         width: 100vw;
         display: flex;
         justify-content: space-around;
         &:before {
             content: "";
             position: absolute;
-            z-index: 30;
+            z-index: 16;
             height: 580px;
             margin-top: -30px;
             width: 100%;
@@ -32,7 +32,7 @@
                 cubic-bezier(0.2, 0.55, 0.64, -0.03) 0.1s forwards;
         }
         .left {
-            z-index: 29;
+            z-index: 15;
             position: relative;
             @include flexCol();
             cursor: pointer;
@@ -80,7 +80,7 @@
         }
         .right {
             position: relative;
-            z-index: 29;
+            z-index: 15;
             cursor: pointer;
             @include flexCol();
             width: 700px;
