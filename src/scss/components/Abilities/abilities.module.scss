@@ -1,10 +1,9 @@
 @import "./../../variables.scss";
-@import "./keyframes.scss";
+@import "./keyframes.module.scss";
 
 .container {
     height: 100vh;
-    z-index: 7;
-    padding-top: 110px;
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     background-color: rgb(11, 11, 11);
@@ -24,18 +23,19 @@
         &:before {
             content: "";
             position: absolute;
-            z-index: 5;
-            width: fit-content;
-            height: 540px;
+            z-index: 30;
+            height: 580px;
+            margin-top: -30px;
             width: 100%;
             background-color: rgb(11, 11, 11);
             animation: abilitiesDisplay 0.8s
-                cubic-bezier(0.2, 0.55, 0.64, -0.03) forwards;
-            animation-delay: 150ms;
+                cubic-bezier(0.2, 0.55, 0.64, -0.03) 0.1s forwards;
         }
         .left {
+            z-index: 29;
             position: relative;
             @include flexCol();
+            cursor: pointer;
             width: 700px;
             max-width: 40vw;
             max-height: 80vh;
@@ -79,6 +79,9 @@
             }
         }
         .right {
+            position: relative;
+            z-index: 29;
+            cursor: pointer;
             @include flexCol();
             width: 700px;
             max-width: 40vw;
@@ -88,7 +91,7 @@
             background-color: white;
             border-radius: 5px;
             border: $primary solid 3px;
-            transition: transform 0.1s ease-in-out;
+            transition: transform 0.15s ease-in-out;
             &:hover {
                 transform: translateY(-15px);
             }

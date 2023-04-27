@@ -1,4 +1,4 @@
-@keyframes projectAppear {
+@keyframes projectsAppear {
     0% {
         clip-path: inset(0 0 100% 0);
     }
@@ -9,7 +9,7 @@
 
 @keyframes projectHover {
     0% {
-        clip-path: inset(0 0 100% 0);
+        clip-path: inset(0 100% 0 0);
     }
     100% {
         clip-path: inset(0 0 0 0);

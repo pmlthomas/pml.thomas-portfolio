@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Abilities from "../components/Abilities";
 import Projects from "../components/Projects/index";
-import styles from "./../scss/components/Header/header.module.scss";
+import styles from "./../scss/components/Homepage/homepage.module.scss";
 
 export default function Homepage() {
     window.onload = function () {
@@ -19,12 +19,12 @@ export default function Homepage() {
     };
 
     return (
-        <div>
+        <>
             <div className={styles.innerCursor} id="innerCursor"></div>
             <div className={styles.outerCursor} id="outerCursor"></div>
             <Header />
             <Abilities />
             <Projects />
-        </div>
+        </>
     );
 }

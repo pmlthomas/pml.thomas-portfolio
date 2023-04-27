@@ -6,7 +6,7 @@ import ProjectCard from "./../Projects/ProjectCard";
 export default function Projects() {
     const { ref, inView } = useInView({
         triggerOnce: true,
-        threshold: 0.3,
+        threshold: 0.4,
     });
 
     const [isVisible, setIsVisible] = useState(false);

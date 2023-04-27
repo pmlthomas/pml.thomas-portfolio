@@ -1,0 +1,25 @@
+@import "./../../variables.scss";
+
+.innerCursor {
+    position: fixed;
+    z-index: 25;
+    margin-top: -6px;
+    margin-left: -5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $primary;
+}
+
+.outerCursor {
+    position: fixed;
+    z-index: 1;
+    margin-top: 4px;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 3px solid $primary;
+    transition: all 400ms ease-out;
+}

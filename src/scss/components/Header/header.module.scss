@@ -2,6 +2,7 @@
 @import "./keyframes.scss";
 
 html {
+    cursor: none;
     scroll-behavior: smooth;
     background-color: $background;
     font-family: "Poppins", sans-serif;
@@ -9,40 +10,17 @@ html {
 
 html,
 body {
-    cursor: none;
     margin: 0;
     min-height: 100% !important;
     min-height: 100vh;
     width: 100vw;
 }
 
-.innerCursor {
-    position: fixed;
-    z-index: 10;
-    margin-top: -6px;
-    margin-left: -5px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: $primary;
-}
-
-.outerCursor {
-    position: fixed;
-    z-index: 10;
-    margin-top: 4px;
-    margin-left: 5px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: transparent;
-    border: 3px solid $primary;
-    transition: all 400ms ease-out;
-}
-
 .container {
+    height: 100vh;
     color: white;
     letter-spacing: 1px;
+    scroll-snap-align: start;
     .topHeader {
         margin-top: 5px;
         width: 100vw;
@@ -53,35 +31,38 @@ body {
             width: 100%;
             height: 80px;
             background-color: $background;
-            z-index: 10;
+            z-index: 27;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding-left: 5vw;
             .navLeft {
                 display: flex;
-                cursor: pointer;
                 color: inherit;
                 text-decoration: none;
                 margin: 0;
                 margin-top: 61px;
                 p {
+                    cursor: pointer;
                     margin-top: -15px;
                     font-size: 3em;
                 }
                 .coloredText {
+                    cursor: pointer;
                     color: $primary;
                     text-shadow: 0 0 2px $primary;
                     margin-top: -15px;
                     font-size: 3em;
                 }
                 .dot {
-                    animation: leftDot 1.31s ease-in forwards;
+                    cursor: pointer;
+                    animation: leftDot 0.6s ease-in forwards;
                     margin-top: -15px;
                     font-size: 3em;
                 }
             }
             .navRight {
+                cursor: default;
                 margin-right: 10vw;
                 margin-top: 5px;
                 .phoneNav {
@@ -89,10 +70,12 @@ body {
                     margin-top: 10px;
                 }
                 ul {
+                    cursor: default;
                     list-style-type: none;
                     display: flex;
                     gap: 50px;
                     li a {
+                        cursor: pointer;
                         position: relative;
                         font-size: 1.2em;
                         color: white;
@@ -133,42 +116,112 @@ body {
                 .salutation {
                     font-size: 1.6em;
                     margin-top: 30px;
-                    animation: textAppearColored 1.8s forwards;
+                    color: $primary;
+                    animation: textAppearFromLeft 3.9s forwards;
                 }
                 .mainText {
                     margin-top: -18px;
                     margin-bottom: -2px;
                     font-size: 3.5em;
+                    animation: textAppearFromLeft 0.8s forwards;
+                    color: white;
+                    span {
+                        color: $primary;
+                        text-shadow: 0 0 2px $primary;
+                        animation: textAppearFromLeft 0.8s forwards;
+                    }
                 }
-                .secondaryText {
-                    margin-top: 12px;
-                    font-size: 1.8em;
-                    opacity: 1;
-                    max-width: 800px;
+                .subText {
+                    display: flex;
+                    font-size: 2em;
+                    p {
+                        margin-top: 14px;
+                        padding-right: 8px;
+                        animation: textAppearFromLeft 0.8s ease-in-out forwards;
+                    }
+                    .hidden {
+                        height: 95px;
+                        color: black;
+                    }
+                    .dynamicTextsContainer {
+                        margin-left: -40px;
+                        margin-top: 20px;
+                        height: 40px;
+                        overflow: hidden;
+                        .dynamicTexts {
+                            margin-top: -6px;
+                            display: flex;
+                            flex-direction: column;
+                            list-style-type: none;
+                            li {
+                                position: relative;
+                                top: 0;
+                                animation: slide 6.6s steps(3) infinite;
+                                margin-bottom: 0.5px;
+                                span {
+                                    position: relative;
+                                    &:before {
+                                        content: "";
+                                        position: absolute;
+                                        height: 100%;
+                                        width: 100%;
+                                        left: 0;
+                                        border-left: 4px solid $primary;
+                                        background-color: $background;
+                                        animation: typing 2.2s steps(19)
+                                            infinite;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-        .profile_img {
-            animation: imgAppear 0.7s ease-in-out forwards;
+        .imgContainer {
+            position: relative;
+            width: 561px;
+            height: 561px;
             border-radius: 50%;
-            box-shadow: -4px 12px $primary;
-            width: 500px;
-            height: 500px;
-            max-width: 90vw;
-            object-fit: cover;
-            object-position: center;
+            overflow: hidden;
+            &::after {
+                content: "";
+                position: absolute;
+                margin-top: 10px;
+                margin-left: 10px;
+                width: 540px;
+                height: 540px;
+                border-radius: 50%;
+                z-index: 6;
+                background-color: black;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                width: 560px;
+                height: 560px;
+                z-index: 5;
+                top: -50%;
+                left: -50%;
+                background-color: $primary;
+                animation: imgColorRotate 5.7s linear infinite;
+                animation-delay: 0.6s;
+                transform-origin: bottom right;
+            }
+            .profile_img {
+                position: absolute;
+                margin-top: 22px;
+                margin-left: 22px;
+                animation: imgAppear 0.6s forwards;
+                z-index: 7;
+                width: 516px;
+                height: 516px;
+                border-radius: 50%;
+                max-width: 90vw;
+                object-fit: cover;
+                object-position: center;
+            }
         }
-    }
-    .mainText {
-        animation: textAppear 1.8s forwards;
-        color: black;
-        span {
-            animation: textAppearColored 1.8s forwards;
-        }
-    }
-    .subText {
-        animation: secondaryTextAppear 0.5s forwards;
-        color: black;
     }
 }
 

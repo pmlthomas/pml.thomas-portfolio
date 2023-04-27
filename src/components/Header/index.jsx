@@ -1,21 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./../../scss/components/Header/header.module.scss";
 import Navbar from "./Navbar";
 import profile_img from "./../../images/profile_img.jpg";
 
 export default function Header() {
-    const h3Str =
-        "Et je suis un Développeur Fullstack Spécialisé dans le Frontend";
-    const h3Chars = [...h3Str];
+    const [dynamicTextStyle, setDynamicTextStyle] = useState(null);
 
-    const h3Text = h3Chars.map((char, i) => {
-        const delay = { animationDelay: 0.5 + i / 90 + "s" };
-        return (
-            <span key={i} style={delay} className={styles.subText}>
-                {char}
-            </span>
-        );
-    });
+    useEffect(() => {
+        setTimeout(() => {
+            setDynamicTextStyle(styles.dynamicTexts);
+        }, 520);
+    }, []);
 
     return (
         <div className={styles.container} id="accueil">
@@ -37,14 +32,37 @@ export default function Header() {
                             Je m'appelle
                             <span> Thomas</span>
                         </h1>
-                        <h3 className={styles.secondaryText}>{h3Text}</h3>
+                        <div className={styles.subText}>
+                            <p>Et je suis un </p>
+                            <div className={styles.dynamicTextsContainer}>
+                                <ul
+                                    className={
+                                        dynamicTextStyle
+                                            ? dynamicTextStyle
+                                            : styles.hidden
+                                    }
+                                >
+                                    <li>
+                                        <span>développeur frontend</span>
+                                    </li>
+                                    <li>
+                                        <span>amoureux du bon code</span>
+                                    </li>
+                                    <li>
+                                        <span>travailleur acharné</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <img
-                    src={profile_img}
-                    className={styles.profile_img}
-                    alt="profile_img"
-                />
+                <div className={styles.imgContainer}>
+                    <img
+                        src={profile_img}
+                        className={styles.profile_img}
+                        alt="profile_img"
+                    />
+                </div>
             </div>
         </div>
     );

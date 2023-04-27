@@ -1,31 +1,11 @@
 @import "./../../variables.scss";
 
-@keyframes textAppear {
+@keyframes textAppearFromLeft {
     0% {
-        color: $background;
+        clip-path: inset(0 100% 0 0);
     }
     100% {
-        color: white;
-    }
-}
-
-@keyframes textAppearColored {
-    0% {
-        text-shadow: none;
-        color: $background;
-    }
-    100% {
-        color: $primary;
-        text-shadow: 0 0 2px $primary;
-    }
-}
-
-@keyframes secondaryTextAppear {
-    0% {
-        color: black;
-    }
-    100% {
-        color: white;
+        clip-path: inset(0 0 0 0);
     }
 }
 
@@ -49,5 +29,26 @@
     }
     100% {
         color: white;
+    }
+}
+
+@keyframes imgColorRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes typing {
+    100% {
+        left: 105%;
+    }
+}
+
+@keyframes slide {
+    100% {
+        top: -148px;
     }
 }

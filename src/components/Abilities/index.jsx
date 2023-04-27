@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./../../scss/components/Abilities/abilities.module.scss";
+import keyframes from "./../../scss/components/Abilities/keyframes.module.scss";
 import { useInView } from "react-intersection-observer";
 
 export default function Abilities() {
     const { ref, inView } = useInView({
         triggerOnce: true,
-        threshold: 0.2,
+        threshold: 0.3,
     });
 
     const [isVisible, setIsVisible] = useState(false);
@@ -28,15 +29,15 @@ export default function Abilities() {
             percentage: "75%",
         },
         {
+            language: "CSS et Sass",
+            percentage: "75%",
+        },
+        {
             language: "JavaScript",
             percentage: "70%",
         },
         {
             language: "TypeScript",
-            percentage: "70%",
-        },
-        {
-            language: "CSS et Sass",
             percentage: "70%",
         },
         {
@@ -76,43 +77,72 @@ export default function Abilities() {
         },
     ];
 
-    const abilitiesLeftDisplay = abilitiesLeft.map((el, i) => {
-        return (
-            <div className={styles.content} key={i}>
-                <div className={styles.langAndPercentage}>
-                    <h3>{el.language}</h3>
-                    <p>{el.percentage}</p>
-                </div>
-                <div className={styles.center}>
-                    <div className={styles.progressBarContainer}>
-                        <div
-                            className={styles.progressBar}
-                            style={{ width: `${el.percentage}` }}
-                        ></div>
-                    </div>
-                </div>
-            </div>
-        );
-    });
+    function getRightKeyframe(percentage) {
+        switch (percentage) {
+            case "80%":
+                return keyframes.abilities1;
+            case "75%":
+                return keyframes.abilities2;
+            case "70%":
+                return keyframes.abilities3;
+            case "65%":
+                return keyframes.abilities4;
+            case "60%":
+                return keyframes.abilities5;
+            case "50%":
+                return keyframes.abilities6;
+        }
+    }
 
-    const abilitiesRightDisplay = abilitiesRight.map((el, i) => {
-        return (
-            <div className={styles.content} key={i}>
-                <div className={styles.langAndPercentage}>
-                    <h3>{el.language}</h3>
-                    <p>{el.percentage}</p>
-                </div>
-                <div className={styles.center}>
-                    <div className={styles.progressBarContainer}>
-                        <div
-                            className={styles.progressBar}
-                            style={{ width: `${el.percentage}` }}
-                        ></div>
+    const abilitiesLeftDisplay =
+        isVisible &&
+        abilitiesLeft.map((el, i) => {
+            const keyframe = getRightKeyframe(el.percentage);
+            return (
+                <div className={styles.content} key={i}>
+                    <div className={styles.langAndPercentage}>
+                        <h3>{el.language}</h3>
+                        <p>{el.percentage}</p>
+                    </div>
+                    <div className={styles.center}>
+                        <div className={styles.progressBarContainer}>
+                            <div
+                                className={styles.progressBar}
+                                style={{
+                                    width: "0",
+                                    animation: `${keyframe} 0.8s ease-out 0.8s forwards`,
+                                }}
+                            ></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
-    });
+            );
+        });
+
+    const abilitiesRightDisplay =
+        isVisible &&
+        abilitiesRight.map((el, i) => {
+            const keyframe = getRightKeyframe(el.percentage);
+            return (
+                <div className={styles.content} key={i}>
+                    <div className={styles.langAndPercentage}>
+                        <h3>{el.language}</h3>
+                        <p>{el.percentage}</p>
+                    </div>
+                    <div className={styles.center}>
+                        <div className={styles.progressBarContainer}>
+                            <div
+                                className={styles.progressBar}
+                                style={{
+                                    width: "0",
+                                    animation: `${keyframe} 0.8s ease-out 0.8s forwards`,
+                                }}
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            );
+        });
 
     return (
         <div ref={ref} className={styles.container} id="compétences">
