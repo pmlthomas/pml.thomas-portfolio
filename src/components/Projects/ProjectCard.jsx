@@ -7,7 +7,9 @@ export default function ProjectCard({ name, description, img }) {
             <img src={img} alt="image_de_projet" />
             <div className={styles.projectTexts}>
                 <h1 className={styles.projectName}>{name}</h1>
-                <h2 className={styles.projectDescription}>{description}</h2>
+                <div className={styles.centerDescription}>
+                    <h2 className={styles.projectDescription}>{description}</h2>
+                </div>
             </div>
         </>
     );

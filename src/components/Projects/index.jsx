@@ -3,6 +3,8 @@ import styles from "./../../scss/components/Projects/projects.module.scss";
 import { useInView } from "react-intersection-observer";
 import ProjectCard from "./../Projects/ProjectCard";
 import adonisImg from "./../../images/projet adonis.png";
+import laravelEcommerceImg from "./../../images/laravel e-commerce.webp";
+import instaRemakeImg from "./../../images/instagram remake.png";
 
 export default function Projects() {
     const { ref, inView } = useInView({
@@ -19,18 +21,18 @@ export default function Projects() {
     const projects = [
         {
             name: "Adonis",
-            description: "Reddit version développement personnel",
+            description: "Reddit version développement personnel avec Next",
             img: adonisImg,
         },
         {
-            name: "Adonis",
-            description: "Reddit version développement personnel",
-            img: adonisImg,
+            name: "Laravel e-commerce",
+            description: "Site e-commerce avancé avec Laravel",
+            img: laravelEcommerceImg,
         },
         {
-            name: "Adonis",
-            description: "Reddit version développement personnel",
-            img: adonisImg,
+            name: "Instagram v2",
+            description: "Remake d'instagram avec React",
+            img: instaRemakeImg,
         },
     ];
 
