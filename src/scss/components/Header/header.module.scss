@@ -98,11 +98,6 @@ body {
             }
         }
     }
-    .underlined {
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-thickness: 1px;
-    }
     .middleHeader {
         height: 100vh;
         display: flex;
@@ -184,7 +179,7 @@ body {
             height: 561px;
             border-radius: 50%;
             overflow: hidden;
-            &::after {
+            &:after {
                 content: "";
                 position: absolute;
                 margin-top: 10px;

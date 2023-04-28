@@ -1,9 +1,10 @@
 // Phone
 @media screen and (max-width: 768px) {
     .container {
+        height: 1300px;
+        padding-top: 30px;
         h1 {
             font-size: 1.5em;
-            margin-bottom: -20px;
         }
         .abilitiesContainerActive {
             display: flex;
@@ -11,13 +12,13 @@
             align-items: center;
             .left {
                 margin: 0;
-                max-width: 80vw;
+                max-width: 85vw;
                 min-height: 500px;
             }
             .right {
                 margin: 0;
                 margin-top: 5vh;
-                max-width: 80vw;
+                max-width: 85vw;
                 min-height: 500px;
             }
         }

@@ -1,32 +1,28 @@
 // Tablet
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .container .middleHeader {
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 4%;
-        .left {
-            display: flex;
+    .container {
+        margin-bottom: -380px;
+        .middleHeader {
+            flex-direction: column;
             justify-content: center;
-            margin-left: 6%;
-            .leftText {
-                font-size: 0.8em;
-            }
-            div {
-                width: 86%;
-                h2 {
+            margin-top: -3%;
+            .left {
+                display: flex;
+                justify-content: center;
+                margin-left: 6%;
+                margin-bottom: 4%;
+                .leftText {
+                    font-size: 0.8em;
+                }
+                .subText {
                     font-size: 1.5em;
                 }
             }
-        }
-        .profile_img {
-            margin-top: 3vh;
-            width: 250px;
-            height: 250px;
-        }
-        .right {
-            display: flex;
-            justify-content: center;
-            margin-right: 0;
+            .right {
+                display: flex;
+                justify-content: center;
+                margin-right: 0;
+            }
         }
     }
 }
@@ -37,15 +33,12 @@
         .topHeader {
             .nav {
                 display: flex;
-                justify-content: space-between;
-                margin: 0;
+                justify-content: end;
                 .navLeft {
-                    margin-left: 25px;
+                    display: none;
                 }
                 .navRight {
-                    margin: 0;
                     .phoneNav {
-                        margin-right: 25px;
                         display: block;
                     }
                     ul {
@@ -56,19 +49,32 @@
         }
         .middleHeader {
             flex-direction: column;
-            justify-content: center;
+            justify-content: start;
+            margin-top: 20vh;
             .left {
                 display: flex;
                 justify-content: center;
+                margin-bottom: 20px;
                 .leftText {
-                    padding: 5vw;
+                    padding: 6vw;
                     font-size: 0.5em;
                 }
             }
-            .profile_img {
-                width: 250px;
-                height: 250px;
-                margin-top: 3vh;
+            .imgContainer {
+                width: 271px;
+                height: 271px;
+                &:after {
+                    width: 250px;
+                    height: 250px;
+                }
+                &:before {
+                    width: 270px;
+                    height: 270px;
+                }
+                .profile_img {
+                    width: 226px;
+                    height: 226px;
+                }
             }
         }
     }

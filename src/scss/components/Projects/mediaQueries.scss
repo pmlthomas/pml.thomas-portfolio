@@ -1,0 +1,20 @@
+// Phone
+@media screen and (max-width: 768px) {
+    .container {
+        padding-top: 30px;
+        h1 {
+            font-size: 1.5em;
+        }
+        .projectsContainerActive {
+            height: 100%;
+            .projectsDisplay {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .projectCard {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
