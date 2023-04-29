@@ -20,26 +20,10 @@
                     }
                 }
             }
-        }
-        .right {
-            display: flex;
-            justify-content: center;
-            margin-right: 0;
-        }
-        .imgContainer {
-            width: 421px;
-            height: 421px;
-            &:after {
-                width: 400px;
-                height: 400px;
-            }
-            &:before {
-                width: 420px;
-                height: 420px;
-            }
-            .profile_img {
-                width: 356px;
-                height: 356px;
+            .right {
+                display: flex;
+                justify-content: center;
+                margin-right: 0;
             }
         }
     }
@@ -55,6 +39,7 @@
         padding-bottom: 80px;
         .topHeader {
             .nav {
+                position: fixed;
                 display: flex;
                 justify-content: end;
                 .navLeft {
@@ -62,10 +47,32 @@
                 }
                 .navRight {
                     .phoneNav {
-                        display: block;
+                        display: flex;
+                        justify-content: end;
                     }
-                    ul {
+                    .ulTabletAndMore {
                         display: none;
+                    }
+                    .openedPhoneNav {
+                        width: 100vw;
+                        padding: 0;
+                        .ulPhone {
+                            position: fixed;
+                            display: flex;
+                            flex-direction: column;
+                            background-color: white;
+                            width: 110vw;
+                            height: 150px;
+                            padding: 0;
+                            li {
+                                padding-left: 12%;
+                                margin-top: 10px;
+                                margin-bottom: -40px;
+                                a {
+                                    color: black;
+                                }
+                            }
+                        }
                     }
                 }
             }
