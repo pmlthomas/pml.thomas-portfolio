@@ -1,27 +1,45 @@
 // Tablet
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1380px) {
     .container {
-        margin-bottom: -380px;
         .middleHeader {
             flex-direction: column;
             justify-content: center;
-            margin-top: -3%;
             .left {
                 display: flex;
                 justify-content: center;
-                margin-left: 6%;
                 margin-bottom: 4%;
                 .leftText {
+                    width: 510px;
+                    padding: 0;
                     font-size: 0.8em;
                 }
                 .subText {
                     font-size: 1.5em;
+                    .dynamicTextsContainer {
+                        height: 30px !important;
+                    }
                 }
             }
-            .right {
-                display: flex;
-                justify-content: center;
-                margin-right: 0;
+        }
+        .right {
+            display: flex;
+            justify-content: center;
+            margin-right: 0;
+        }
+        .imgContainer {
+            width: 421px;
+            height: 421px;
+            &:after {
+                width: 400px;
+                height: 400px;
+            }
+            &:before {
+                width: 420px;
+                height: 420px;
+            }
+            .profile_img {
+                width: 356px;
+                height: 356px;
             }
         }
     }
@@ -30,6 +48,11 @@
 // Phone
 @media screen and (max-width: 768px) {
     .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 10px;
+        padding-bottom: 80px;
         .topHeader {
             .nav {
                 display: flex;
@@ -48,9 +71,9 @@
             }
         }
         .middleHeader {
+            margin-top: -80px;
             flex-direction: column;
-            justify-content: start;
-            margin-top: 20vh;
+            justify-content: center;
             .left {
                 display: flex;
                 justify-content: center;
@@ -58,6 +81,10 @@
                 .leftText {
                     padding: 6vw;
                     font-size: 0.5em;
+                    width: 330px;
+                }
+                .subText .dynamicTextsContainer {
+                    height: 20px !important;
                 }
             }
             .imgContainer {

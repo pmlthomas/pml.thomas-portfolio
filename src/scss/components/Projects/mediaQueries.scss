@@ -1,3 +1,21 @@
+// Tablet
+@media screen and (min-width: 768px) and (max-width: 1380px) {
+    .container {
+        padding-top: 75px;
+        .projectsContainerActive {
+            height: 100%;
+            .projectsDisplay {
+                width: 95vw;
+                display: flex;
+                flex-wrap: wrap;
+                .projectCard {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
 // Phone
 @media screen and (max-width: 768px) {
     .container {

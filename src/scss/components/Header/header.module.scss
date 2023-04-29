@@ -108,6 +108,8 @@ body {
             .leftText {
                 @include flexCol();
                 margin-top: -7%;
+                width: 700px;
+                padding-left: 5%;
                 .salutation {
                     font-size: 1.6em;
                     margin-top: 30px;
@@ -131,7 +133,7 @@ body {
                     font-size: 2em;
                     p {
                         margin-top: 14px;
-                        padding-right: 8px;
+                        padding-right: 1.25%;
                         animation: textAppearFromLeft 0.8s ease-in-out forwards;
                     }
                     .hidden {
